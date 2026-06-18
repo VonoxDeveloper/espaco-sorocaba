@@ -1218,6 +1218,17 @@ a {
 .smart-link .arr {
   transition: transform var(--dur-base) var(--ease-out-quint);
 }
+.smart-link-big {
+  font: 400 32px/1.1 var(--font-display);
+  letter-spacing: -0.01em;
+  margin-top: 48px;
+  gap: 14px;
+}
+@media (max-width: 767px) {
+  .smart-link-big {
+    font-size: 24px;
+  }
+}
 .smart-link:hover .arr {
   transform: translateX(4px);
 }

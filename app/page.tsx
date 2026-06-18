@@ -324,22 +324,8 @@ export default function Page() {
             você tem ao lado uma equipe experiente, com processos estruturados
             e total comprometimento com o resultado.
           </p>
-          <div className="smart-covers" data-stagger>
-            <div className="smart-cover">
-              <div className="smart-cover-label">Pré-evento</div>
-              <p className="smart-cover-text">Planejamento, cronograma, briefing técnico, alinhamento de fornecedores</p>
-            </div>
-            <div className="smart-cover">
-              <div className="smart-cover-label">Durante</div>
-              <p className="smart-cover-text">Coordenação on-site, suporte à equipe, gestão de imprevistos</p>
-            </div>
-            <div className="smart-cover">
-              <div className="smart-cover-label">Pós-evento</div>
-              <p className="smart-cover-text">Encerramento, relatório, acompanhamento e próximos passos</p>
-            </div>
-          </div>
           <a
-            className="smart-link"
+            className="smart-link smart-link-big"
             href="mailto:comercial@smevents.com.br"
           >
             Conheça a Smart Events <span className="arr">→</span>
