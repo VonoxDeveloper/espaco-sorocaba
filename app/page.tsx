@@ -305,11 +305,7 @@ export default function Page() {
           disponível — da cozinha completa ao banheiro para PNE.
         </p>
         <EstruturaSec />
-        <p className="estrutura-close reveal">
-          Cada detalhe foi pensado para que você não precise improvisar no dia.
-          Porque quando o espaço está pronto, a sua equipe pode focar no que
-          realmente importa: a experiência do seu convidado.
-        </p>
+
       </section>
 
       {/* ── SMART EVENTS ── */}
