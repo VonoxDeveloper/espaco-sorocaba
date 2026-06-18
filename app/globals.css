@@ -771,7 +771,7 @@ a {
 .tour {
   background: var(--volcanic);
   color: var(--parchment);
-  padding: 112px 64px;
+  padding: 72px 64px;
   position: relative;
   overflow: hidden;
 }

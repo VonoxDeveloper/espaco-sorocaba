@@ -395,13 +395,6 @@ export default function Page() {
           </p>
         </div>
         <TourEmbed src="https://my.matterport.com/show/?m=jaLBWds7wAE" />
-        <div className="tour-pills">
-          <span className="tour-pill"><span className="dot" />Navegação livre pelo espaço</span>
-          <span className="tour-pill"><span className="dot" />Medidas e metragens reais</span>
-          <span className="tour-pill"><span className="dot" />Vista do rooftop</span>
-          <span className="tour-pill"><span className="dot" />Compatível com VR</span>
-          <span className="tour-pill"><span className="dot" />Disponível 24h</span>
-        </div>
       </section>
 
       {/* ── FAQ ── */}
