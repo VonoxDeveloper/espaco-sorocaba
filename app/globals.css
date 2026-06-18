@@ -1106,13 +1106,7 @@ a {
   }
 }
 
-/* legacy alias kept for other references */
-.pq-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 16px;
-}
+
 .pq-card {
   background: var(--bone);
   border: 1px solid var(--ash);
@@ -1859,14 +1853,14 @@ a {
   .estr-detail-copy {
     padding: 32px 24px;
   }
-  .pq-grid {
-    grid-template-columns: 1fr;
-  }
   .depo-grid {
     grid-template-columns: 1fr;
   }
   .tipos-col {
     padding: 28px 20px 32px;
+  }
+  .tipos-grid {
+    grid-template-columns: 1fr;
   }
   .loc-grid {
     grid-template-columns: 1fr;

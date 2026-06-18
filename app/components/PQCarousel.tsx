@@ -86,7 +86,7 @@ export default function PQCarousel() {
       </div>
 
       {/* Desktop grid (unchanged) */}
-      <div className="pq-grid pq-grid-desktop" data-stagger>
+      <div className="pq-grid-desktop" data-stagger>
         {PQ.map((item) => (
           <div className="pq-card" key={item.type}>
             <div className="pq-type">{item.type}</div>
