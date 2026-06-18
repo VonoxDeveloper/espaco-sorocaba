@@ -1421,6 +1421,111 @@ a {
 }
 
 /* =========================================================================
+   WhatsApp floating widget
+   ========================================================================= */
+.wa-float-wrap {
+  position: fixed;
+  right: 24px;
+  bottom: 90px; /* sits above the back-to-top button */
+  z-index: 61;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.wa-float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: background 0.22s var(--ease-out-quint),
+    transform 0.22s var(--ease-out-quint),
+    box-shadow 0.22s var(--ease-out-quint);
+  flex-shrink: 0;
+}
+.wa-float-btn svg {
+  width: 30px;
+  height: 30px;
+}
+.wa-float-btn:hover {
+  background: #1da851;
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+}
+
+/* Pop-up card */
+.wa-popup {
+  background: var(--bone);
+  border: 1px solid var(--ash);
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  width: 270px;
+  box-shadow: 0 8px 40px rgba(26, 26, 23, 0.18);
+  position: relative;
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-out-quint),
+    transform 0.28s var(--ease-out-quint);
+  transform-origin: bottom right;
+}
+.wa-popup.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.wa-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--stone);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.18s;
+}
+.wa-popup-close:hover {
+  color: var(--volcanic);
+}
+.wa-popup-title {
+  font: 600 15px/1.35 var(--font-body);
+  color: var(--volcanic);
+  margin: 0 0 6px;
+  padding-right: 20px;
+}
+.wa-popup-body {
+  font: 400 13px/1.5 var(--font-body);
+  color: var(--volcanic-soft);
+  margin: 0 0 14px;
+}
+.wa-popup-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #25d366;
+  color: #fff;
+  font: 600 13px/1 var(--font-body);
+  text-decoration: none;
+  padding: 11px 16px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.wa-popup-cta:hover {
+  background: #1da851;
+}
+
+/* =========================================================================
    Floating back-to-top
    ========================================================================= */
 .floater {
