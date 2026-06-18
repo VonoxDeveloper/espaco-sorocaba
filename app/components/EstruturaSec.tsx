@@ -80,6 +80,7 @@ const DATA = [
 
 export default function EstruturaSec() {
   const [active, setActive] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const prevActive = useRef<number | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const plusRefs = useRef<(HTMLSpanElement | null)[]>([]);
@@ -166,11 +167,17 @@ export default function EstruturaSec() {
     </div>
   );
 
+  const VISIBLE_MOBILE = 6;
+  const visibleData = DATA.map((item, i) => ({ item, i }));
+
   return (
     <>
       <div className="estrutura-grid" data-stagger>
-        {DATA.map((item, i) => (
-          <div key={item.name} className="estr-grid-row">
+        {visibleData.map(({ item, i }) => (
+          <div
+            key={item.name}
+            className={`estr-grid-row${!showAll && i >= VISIBLE_MOBILE ? " estr-hidden-mobile" : ""}`}
+          >
             <div
               className={`estr-item${active === i ? " active" : ""}`}
               onClick={() => toggle(i)}
@@ -197,6 +204,17 @@ export default function EstruturaSec() {
           </div>
         ))}
       </div>
+
+      {/* Ver mais / Ver menos — mobile only */}
+      {!showAll && (
+        <button
+          className="estr-ver-mais"
+          onClick={() => setShowAll(true)}
+          aria-label="Ver todos os itens da estrutura"
+        >
+          Ver mais
+        </button>
+      )}
 
       {/* Desktop expanding detail panel */}
       <div

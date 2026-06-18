@@ -656,6 +656,43 @@ a {
   overflow: hidden;
   margin-top: 16px;
 }
+/* Mobile: hide items beyond the 6th */
+@media (max-width: 767px) {
+  .estr-hidden-mobile {
+    display: none;
+  }
+
+  .estr-ver-mais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 24px;
+    background: none;
+    border: 1px solid var(--terracotta);
+    border-radius: 10px;
+    color: var(--terracotta);
+    font: 500 14px/1 var(--font-body);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .estr-ver-mais:hover {
+    background: var(--terracotta);
+    color: #fff;
+  }
+}
+
+/* Desktop: never hide rows or show the button */
+@media (min-width: 768px) {
+  .estr-hidden-mobile {
+    display: block;
+  }
+  .estr-ver-mais {
+    display: none;
+  }
+}
+
 .estr-item {
   background: var(--parchment-deep);
   padding: 28px 24px;
