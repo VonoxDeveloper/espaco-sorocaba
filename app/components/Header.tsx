@@ -10,13 +10,13 @@ function WhatsAppFloat() {
   const [popupDismissed, setPopupDismissed] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Auto-show popup after 6 seconds if not dismissed
+  // Auto-show popup on page load after 1 second
   useEffect(() => {
     timerRef.current = setTimeout(() => {
       if (!popupDismissed) setPopupOpen(true);
-    }, 6000);
+    }, 1000);
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [popupDismissed]);
+  }, []);
 
   const dismiss = () => {
     setPopupOpen(false);
