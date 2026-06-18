@@ -1007,6 +1007,69 @@ a {
 .pq {
   background: var(--parchment-deep);
 }
+/* Desktop grid — hidden on mobile */
+.pq-grid-desktop {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 16px;
+}
+
+/* Mobile carousel — hidden on desktop */
+.pq-carousel {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .pq-grid-desktop {
+    display: none;
+  }
+
+  .pq-carousel {
+    display: block;
+    margin-top: 16px;
+  }
+
+  .pq-carousel-track {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .pq-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .pq-carousel-track .pq-card {
+    flex: 0 0 calc(100% - 32px);
+    scroll-snap-align: center;
+  }
+
+  .pq-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .pq-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    background: var(--stone);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .pq-dot.active {
+    background: var(--terracotta);
+    transform: scale(1.3);
+  }
+}
+
+/* legacy alias kept for other references */
 .pq-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import EstruturaSec from "./components/EstruturaSec";
+import PQCarousel from "./components/PQCarousel";
 import { useSiteAnimations } from "./components/useSiteAnimations";
 
 const IMG = {
@@ -234,15 +235,7 @@ export default function Page() {
       <section className="section pq" id="tipos">
         <div className="eyebrow reveal">Você está no lugar certo se…</div>
         <h2 className="h2 reveal">Feito para quem não aceita mediocridade no próprio evento.</h2>
-        <div className="pq-grid" data-stagger>
-          {PQ.map((item) => (
-            <div className="pq-card" key={item.type}>
-              <div className="pq-type">{item.type}</div>
-              <h3 className="pq-title">{item.title}</h3>
-              <p className="pq-desc">{item.desc}</p>
-            </div>
-          ))}
-        </div>
+        <PQCarousel />
 
         <div className="tipos-divider reveal" />
         <h3 className="tipos-sub-heading reveal">De corporativo a comemorativo — aqui cabe tudo.</h3>
