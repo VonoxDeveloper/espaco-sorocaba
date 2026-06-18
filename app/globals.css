@@ -1865,8 +1865,8 @@ a {
   .depo-grid {
     grid-template-columns: 1fr;
   }
-  .tipos-grid {
-    grid-template-columns: 1fr;
+  .tipos-col {
+    padding: 28px 20px 32px;
   }
   .loc-grid {
     grid-template-columns: 1fr;
