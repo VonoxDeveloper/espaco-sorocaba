@@ -37,8 +37,8 @@ function WhatsAppFloat() {
       {/* Pop-up CTA */}
       <div className={`wa-popup${popupOpen ? " show" : ""}`} role="dialog" aria-label="Fale conosco pelo WhatsApp">
         <button className="wa-popup-close" aria-label="Fechar" onClick={dismiss}>×</button>
-        <p className="wa-popup-title">Pronto para o evento dos seus sonhos?</p>
-        <p className="wa-popup-body">Fale agora com nosso time e receba um orçamento personalizado sem compromisso.</p>
+        <p className="wa-popup-title">Datas de julho disponíveis!</p>
+        <p className="wa-popup-body">Consulte agora.</p>
         <a
           href={WA_URL}
           className="wa-popup-cta"
@@ -46,7 +46,7 @@ function WhatsAppFloat() {
           rel="noopener noreferrer"
           onClick={dismiss}
         >
-          Solicitar orçamento grátis
+          Consultar agora
         </a>
       </div>
 
