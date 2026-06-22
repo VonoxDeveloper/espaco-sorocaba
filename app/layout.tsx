@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const BASE_URL = "https://espacosorocaba.com.br";
@@ -79,6 +80,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17901931588"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-17901931588');
+          `}
+        </Script>
+      </head>
       <body>
         <script
           type="application/ld+json"
