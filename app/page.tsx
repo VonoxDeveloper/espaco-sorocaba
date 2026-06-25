@@ -146,6 +146,12 @@ const WA = "https://wa.me/5521999242328?text=";
 const WA_ORCAMENTO = WA + encodeURIComponent("Olá! Vim pelo site do Espaço Sorocaba e gostaria de solicitar um orçamento para o meu evento. Poderia me passar mais informações?");
 const WA_VISITA    = WA + encodeURIComponent("Olá! Vim pelo site do Espaço Sorocaba e gostaria de agendar uma visita presencial ao espaço. Qual a disponibilidade?");
 
+function trackConversion() {
+  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+    (window as any).gtag("event", "conversion", { send_to: "AW-17901931588/7y4DCKTGzMUcEMSYp9hC" });
+  }
+}
+
 export default function Page() {
   useSiteAnimations();
 
@@ -179,8 +185,8 @@ export default function Page() {
             localização estratégica e coordenação profissional do início ao fim.
           </p>
           <div className="cta-row">
-            <a className="btn" href={WA_ORCAMENTO} target="_blank" rel="noopener noreferrer">Solicite um orçamento grátis</a>
-            <a className="btn btn--ghost-light" href={WA_VISITA} target="_blank" rel="noopener noreferrer">Agende uma visita presencial</a>
+            <a className="btn" href={WA_ORCAMENTO} target="_blank" rel="noopener noreferrer" onClick={trackConversion}>Solicite um orçamento grátis</a>
+            <a className="btn btn--ghost-light" href={WA_VISITA} target="_blank" rel="noopener noreferrer" onClick={trackConversion}>Agende uma visita presencial</a>
           </div>
         </div>
       </section>
@@ -416,8 +422,8 @@ export default function Page() {
           com uma proposta personalizada para o seu evento.
         </p>
         <div className="cta-row reveal">
-          <a className="btn" href={WA_ORCAMENTO} target="_blank" rel="noopener noreferrer">Solicite um orçamento gratuito</a>
-          <a className="btn btn--ghost-light" href={WA_VISITA} target="_blank" rel="noopener noreferrer">Agende uma visita presencial</a>
+          <a className="btn" href={WA_ORCAMENTO} target="_blank" rel="noopener noreferrer" onClick={trackConversion}>Solicite um orçamento gratuito</a>
+          <a className="btn btn--ghost-light" href={WA_VISITA} target="_blank" rel="noopener noreferrer" onClick={trackConversion}>Agende uma visita presencial</a>
         </div>
         <p className="cta-micro">Sem compromisso. Sem burocracia. Só um papo para entender o que você precisa.</p>
       </section>

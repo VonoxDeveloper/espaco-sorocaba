@@ -5,6 +5,12 @@ import { getLenis } from "@/app/lib/lenis";
 
 const WA_URL = `https://wa.me/5521999242328?text=${encodeURIComponent("Olá! Vim pelo site do Espaço Sorocaba e gostaria de solicitar um orçamento para o meu evento. Poderia me passar mais informações?")}`;
 
+function trackConversion() {
+  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+    (window as any).gtag("event", "conversion", { send_to: "AW-17901931588/7y4DCKTGzMUcEMSYp9hC" });
+  }
+}
+
 function WhatsAppFloat() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupDismissed, setPopupDismissed] = useState(false);
@@ -44,7 +50,7 @@ function WhatsAppFloat() {
           className="wa-popup-cta"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={dismiss}
+          onClick={() => { trackConversion(); dismiss(); }}
         >
           Consultar agora
         </a>
@@ -153,6 +159,7 @@ export default function Header() {
           className="header-cta"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackConversion}
         >
           Solicite um orçamento
         </a>
@@ -185,7 +192,7 @@ export default function Header() {
             className="mobile-cta"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { trackConversion(); setMenuOpen(false); }}
           >
             Solicite um orçamento
           </a>
